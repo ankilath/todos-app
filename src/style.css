@@ -1,0 +1,49 @@
+.App {
+  font-family: sans-serif;
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+}
+
+li div {
+  display: inline-block;
+  min-width: 278px;
+}
+
+form * {
+  padding-right: 10px;
+}
+
+div label input {
+  margin-left: 10px;
+}
+
+ul li input:checked ~ span {
+  text-decoration: line-through;
+}
+
+.todoItem {
+  display: flex;
+  justify-content: around;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid gray;
+}
+
+.todoItem-remove {
+  display: none;
+  margin: 0px 20px;
+}
+
+.todoItem:hover .todoItem-remove {
+  display: block;
+}
+
+.sortActionText {
+  color: #add8e6;
+  text-decoration: underline;
+  cursor: pointer;
+}
