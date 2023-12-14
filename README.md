@@ -15,3 +15,23 @@ You can choose to use persistent storage with APIs or to have it facilitated by 
 1. Add hidden timestamps to todos (created_at, completed_at), these will be used for sorting
 2. The active todos should be sorted by created_at descending
 3. The completed todos should be sorted by completed_at ascending
+
+## Installation and Setup Instructions
+
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
+
+Installation:
+
+`npm install`  
+
+To Run Test Suite:  
+
+`npm test`  
+
+To Start Server:
+
+`npm start`  
+
+To Visit App:
+
+`http://localhost:3000/`  
