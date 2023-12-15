@@ -3,8 +3,6 @@ type Params = {
   done: boolean;
   toggle: () => void;
   remove: () => void;
-  created_at: Date;
-  completed_at?: Date;
 };
 
 export const TodoItem = ({
@@ -12,8 +10,6 @@ export const TodoItem = ({
   done,
   toggle,
   remove,
-  created_at,
-  completed_at,
 }: Params) => {
   return (
     <li>
@@ -22,7 +18,6 @@ export const TodoItem = ({
           <input type="checkbox" checked={done} onChange={toggle} />
           <span>{title}</span>
         </label>
-        {/* <span style={{ color: 'blue' }}>{created_at}</span> */}
         <button className="todoItem-remove" onClick={remove}>
           X
         </button>

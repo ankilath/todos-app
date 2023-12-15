@@ -21,6 +21,10 @@ export const Todo = ({ title }: Params) => {
     return list.filter((todo) => todo.done).length > 0;
   };
 
+  const getActiveTodosCount = () => {
+    return list.filter((todo) => !todo.done).length > 0;
+  }
+
   return (
     <>
       <h1>{title}</h1>
@@ -28,7 +32,7 @@ export const Todo = ({ title }: Params) => {
         <p>{'Your list is empty, try adding a task'}</p>
       ) : (
         <div>
-          <div>
+          {getActiveTodosCount() && <div>
             <label>Active Todos:</label>{' '}
             <span
               className="sortActionText"
@@ -36,18 +40,17 @@ export const Todo = ({ title }: Params) => {
             >
               sort
             </span>
-          </div>
+          </div>}
           <ul>
             {list
               .filter((todo) => !todo.done)
-              .map(({ title, id, done, created_at }) => (
+              .map(({ title, id, done }) => (
                 <TodoItem
                   key={id}
                   title={title}
                   done={done}
                   toggle={() => toggleTodo(id)}
                   remove={() => deleteTodo(id)}
-                  created_at={created_at}
                 />
               ))}
           </ul>
@@ -68,15 +71,13 @@ export const Todo = ({ title }: Params) => {
         <ul>
           {list
             .filter((todo) => todo.done)
-            .map(({ title, id, done, created_at, completed_at }) => (
+            .map(({ title, id, done }) => (
               <TodoItem
                 key={id}
                 title={title}
                 done={done}
                 toggle={() => toggleTodo(id)}
                 remove={() => deleteTodo(id)}
-                created_at={created_at}
-                completed_at={completed_at}
               />
             ))}
         </ul>
